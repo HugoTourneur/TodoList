@@ -20,6 +20,7 @@ const AddListForm = (props) => {
   const handleSubmit = useCallback((values, { resetForm }) => {
       const newList = {
         name: values.description,
+        tasks:[]
       }
       setState((current) => [...current, newList])
       resetForm({ values: "" })

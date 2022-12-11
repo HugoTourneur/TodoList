@@ -9,7 +9,7 @@ const NameList = () => {
   return (
     <>
       {state.map((item) => (
-        <ListHeader key={item.id}>{item.name}</ListHeader>
+        <ListHeader list={ item } key={item.id}>{item.name}</ListHeader>
       ))}
     </>
   )
