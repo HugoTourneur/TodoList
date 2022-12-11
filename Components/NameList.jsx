@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { context } from '../pages/_app'
+import ListHeader from './ListHeader'
 
 const NameList = () => {
   const {state} = useContext(context)
@@ -8,7 +9,7 @@ const NameList = () => {
   return (
     <>
       {state.map((item) => (
-        <button key={item.id}>{item.name}</button>
+        <ListHeader key={item.id}>{item.name}</ListHeader>
       ))}
     </>
   )

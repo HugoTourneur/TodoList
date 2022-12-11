@@ -9,7 +9,7 @@ const FormField = (props) => {
   return (
     <label className={classNames("flex flex-col gap-2", className)}>
       <span>{label}</span>
-      <Input {...otherProps} className="border-2" />
+      <Input {...field} {...otherProps} className="border-2" />
       {meta.touched && meta.error ? (
         <span className="text-sm text-red-500 font-semibold">{meta.error}</span>
       ) : null}
