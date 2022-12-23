@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react"
-import { context } from "../pages/_app"
+import { context } from "../../pages/_app"
 
 const Task = (props) => {
   const { key, id, object } = props

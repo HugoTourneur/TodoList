@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { context } from "../pages/_app"
-import Task from "./Task"
+import Task from "./generic/Task"
 import ToolBar from "./ToolBar"
 
 const TasksList = () => {

@@ -1,11 +1,11 @@
 import Header from "../components/Header"
-import TasksFrame from "../components/TasksFrame"
+import TasksList from "../components/TasksList"
 
 const Home = () => {
   return (
     <>
       <Header />
-      <TasksFrame />
+      <TasksList />
     </>
   )
 }

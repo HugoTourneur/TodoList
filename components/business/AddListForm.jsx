@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik"
 import { useCallback, useContext } from "react"
 import * as yup from "yup"
-import { context } from "../pages/_app"
+import { context } from "../../pages/_app"
 import FormField from "/components/FormField"
 import Text from "/components/generic/Text"
 

@@ -1,7 +1,7 @@
 import { useCallback, useContext } from "react"
 import { context } from "../pages/_app"
-import AddTaskModal from "./AddTaskModal"
-import ModifyListModal from "./ModifyListModal"
+import AddTaskModal from "./ui/AddTaskModal"
+import ModifyListModal from "./ui/ModifyListModal"
 
 
 const ToolBar = () => {

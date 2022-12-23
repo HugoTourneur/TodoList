@@ -3,7 +3,6 @@ import { context } from "../pages/_app"
 
 const ListHeader = (props) => {
   const { children, list, key, ...otherProps } = props
-  //console.log(key)
   const { setDisplayedList } = useContext(context)
 
   const handleClick = useCallback(() => {

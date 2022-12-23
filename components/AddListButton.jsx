@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { context } from "../pages/_app"
-import AddListModal from "./AddListModal"
+import AddListModal from "./ui/AddListModal"
 
 const AddListButton = () => {
   const { showAddListModal, setShowAddListModal } = useContext(context)
