@@ -6,23 +6,18 @@ import FormField from "/components/FormField"
 import Text from "/components/generic/Text"
 
 const AddTaskForm = (props) => {
-  const { listId} = props
+  const { listId } = props
   const { state, setState, setShowAddTaskModal, displayedList, setDisplayedList } = useContext(context)
   const initialValues = {
     description: ""
   }
-
-  const addTodo = (todos, newTask) => {
-    return {...todos, ...newTask}
-  }
-
+  
   const validationSchema = yup.object().shape({
     description: yup.string()
   })
 
   const handleSubmit = useCallback((values, { resetForm }) => {
-    const refLastTaskId = Object.keys(displayedList.todos).length + 1
-    const newId = displayedList[refLastTaskId]
+    const newId = Object.values(displayedList.todos).length + 1
     const previousTodos = state.todoList[listId].todos
     const newTask = {
       [newId]: {
@@ -44,7 +39,6 @@ const AddTaskForm = (props) => {
     }
     )
     setDisplayedList(Object.values(state.todoList[listId].todos))
-    console.log(state)
     resetForm({ values: "" })
     setShowAddTaskModal(false)
   },
@@ -63,16 +57,18 @@ const AddTaskForm = (props) => {
         onSubmit={handleSubmit}
       >
         <Form>
-          <Text>Description:</Text>
+          <Text className="font-bold px-4 py-1">Description:</Text>
           <FormField 
             label="Description"
             name="description"
             placeholder="Task's descritpion"
             />
-          <button type="submit">Enter</button>
+          <div className="flex py-4 gap-2 items-center justify-end px-4">
+            <button className="bg-blue-600 active:bg-blue-700 text-white border rounded-md font-semibold px-4 py-2 text-lg" type="submit">Save</button>
+            <button className="bg-white active:bg-slate-50 text-black border rounded-md font-semibold px-4 py-2 text-lg" onClick = {handleClose}>Cancel</button>
+          </div>
         </Form>
       </Formik>
-      <button onClick = {handleClose}>Close</button>
     </>
   )
 }

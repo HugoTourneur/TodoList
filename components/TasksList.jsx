@@ -13,9 +13,9 @@ const TasksList = () => {
         <>
           <ToolBar/>
           <div>
-            {Object.values(list.todos).map((item) => (
+            {Object.keys(list.todos).map((key) => (
               <>
-                <Task key={`${item.description}`} object={item} />
+                <Task key={key} id={key} object={list.todos[key]} />
               </>
             ))}
           </div>

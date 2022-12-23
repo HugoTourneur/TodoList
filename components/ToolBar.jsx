@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react"
 import { context } from "../pages/_app"
-import AddTaskForm from "./AddTaskForm"
+import AddTaskModal from "./AddTaskModal"
 import ModifyListModal from "./ModifyListModal"
 
 
@@ -52,7 +52,7 @@ const ToolBar = () => {
         </div>
         <button>{checkIcon}</button>
       </div>
-      {showAddTaskModal ? <AddTaskForm listId={listId} /> : null}
+      {showAddTaskModal ? <AddTaskModal listId={listId} /> : null}
       {showModifyListModal ? <ModifyListModal listId={listId} />: null}
     </>
   )
