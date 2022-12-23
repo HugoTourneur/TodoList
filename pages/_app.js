@@ -1,14 +1,45 @@
-import { createContext, useState } from "react";
-import "../styles/globals.css";
+import { createContext, useState } from "react"
+import "../styles/globals.css"
 
-const context = createContext();
+const context = createContext()
 
 const MyApp = ({ Component, pageProps }) => {
-  const [state, setState] = useState([]);
-  const [showAddListModal, setShowAddListModal] = useState(false);
-  const [displayedList, setDisplayedList] = useState(["hell", "o"]);
+  const [state, setState] = useState({
+    lastTodoListId: 1,
+    todoList: {
+      0: {
+      id: 0,
+      name: "Homework",
+      todos: {
+        1: {
+          description: "HTML / CSS",
+          done: false
+        },
+        2: {
+          description: "React",
+          done: true
+        }
+      }
+      },
+      1: {
+        id: 1,
+        name: "Chore",
+        todos: {
+          1: {
+            description: "Take a shower",
+            done: false
+          }
+        }
+      }
+    }
+  })
+  const [showAddListModal, setShowAddListModal] = useState(false)
+  const [showModifyListModal, setShowModifyListModal] = useState(false)
+  const [showAddTaskModal, setShowAddTaskModal] = useState(false)
 
-  setState;
+  const [displayedList, setDisplayedList] = useState({})
+
+  setState
 
   return (
     <context.Provider
@@ -19,12 +50,16 @@ const MyApp = ({ Component, pageProps }) => {
         setShowAddListModal,
         displayedList,
         setDisplayedList,
+        showAddTaskModal,
+        setShowAddTaskModal,
+        showModifyListModal,
+        setShowModifyListModal
       }}
     >
       <Component {...pageProps} />
     </context.Provider>
-  );
-};
+  )
+}
 
-export default MyApp;
-export { context };
+export default MyApp
+export { context }

@@ -1,5 +1,5 @@
-import Header from "../Components/Header";
-import TasksFrame from "../Components/TasksFrame";
+import Header from "../components/Header"
+import TasksFrame from "../components/TasksFrame"
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <Header />
       <TasksFrame />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
