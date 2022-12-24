@@ -25,6 +25,7 @@ const AddListForm = () => {
         [lastId]: {
           id: state.lastTodoListId+1,
           name: values.description,
+          doneTask: 0,
           todos: {},
         },
       },

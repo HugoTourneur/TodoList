@@ -9,6 +9,11 @@ const Task = (props) => {
 </svg>
 
   const handleClick = useCallback(() => {
+    if (state.todoList[displayedList.id].todos[id].done === true)
+    {
+      state.todoList[displayedList.id].doneTask -= 1
+    }
+
     delete state.todoList[displayedList.id].todos[id]
     setState(() => {
       return {
@@ -16,12 +21,29 @@ const Task = (props) => {
       }
     })
   }, [displayedList.id, id, setState, state])
+
+  const handleCheckBox = useCallback(() => {
+    if (state.todoList[displayedList.id].todos[id].done === true)
+    {
+      state.todoList[displayedList.id].todos[id].done = false
+      state.todoList[displayedList.id].doneTask -= 1 
+    } else {
+      state.todoList[displayedList.id].todos[id].done = true
+      state.todoList[displayedList.id].doneTask += 1 
+    }
+    
+    setState(() => {
+      return {
+        ...state
+      }
+    })
+  }, [setState, displayedList.id, id, state])
   
   return (
     <li key={key} className="p-2 border-b flex gap-4 item-center justify-between group">
-      <div>
+      <div className="flex gap-4 items-center">
+        <input type="checkbox" className="bg-gray-500 checked:bg-green-500" onChange={handleCheckBox}/>
         <span>{object.description}</span>
-        <span>{object.status}</span>
       </div>
       <div className="invisible group-hover:visible">
         <button onClick={handleClick}>{delIcon}</button>

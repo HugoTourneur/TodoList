@@ -26,6 +26,7 @@ const ModifyListForm = (props) => {
         const updatedList = {
           id: item.id,
           name: values.description,
+          doneTask: item.doneTask,
           todos: item.todos
         }
 

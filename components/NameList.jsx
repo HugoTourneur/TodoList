@@ -9,7 +9,7 @@ const NameList = () => {
 return (
     <ul className="flex">
     {Object.values(lists).map((item) => (
-        <ListHeader list={ item } key={`${item.id}${item.name}`}>{item.name}</ListHeader>
+      <ListHeader list={item} key={`${item.id}${item.name}`} id={item.id}>{item.name}</ListHeader>
       ))}
     </ul>
   )

@@ -10,6 +10,7 @@ const MyApp = ({ Component, pageProps }) => {
       0: {
       id: 0,
       name: "Homework",
+      doneTask: 1,
       todos: {
         1: {
           description: "HTML / CSS",
@@ -24,6 +25,7 @@ const MyApp = ({ Component, pageProps }) => {
       1: {
         id: 1,
         name: "Chore",
+        doneTask: 0,
         todos: {
           1: {
             description: "Take a shower",
