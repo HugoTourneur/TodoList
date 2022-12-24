@@ -1,4 +1,3 @@
-//import { Component } from 'react'
 import classNames from "classnames"
 
 const Text = (props) => {

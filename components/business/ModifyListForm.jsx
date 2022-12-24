@@ -19,7 +19,6 @@ const ModifyListForm = (props) => {
   })
 
   const handleSubmit = useCallback((values, { resetForm }) => {
-    //const lastId = state.lastTodoListId + 1
     const newState = Object.values(state.todoList).map((item) => {
       if (item.name === previousName)
       {
